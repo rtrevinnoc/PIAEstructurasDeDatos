@@ -1,22 +1,30 @@
-La Loma Tacos Chava 2000 Privadas El Sauce Tacos Chava 4100 Privadas El Sauce Ricardo Flores
-    Magon 4400 Infonavit Monterreal Ricardo Flores Magon 1600 Infonavit Monterreal Tacos
-        Chava 1800 Infonavit Monterreal Felipe Carrillo Puerto 2000 Ricardo Flores Magon Privadas
-            El Sauce 4400 Ricardo Flores Magon Tacos Chava 3400 Ricardo Flores Magon Infonavit
-                Monterreal 1600 Ricardo Flores Magon Sector Jardines 1600 Sector Jardines Ricardo
-                    Flores Magon 1600 San Genaro Felipe Carrillo Puerto 4700 San Genaro Celestino
-                        Gasca 4600 Celestino Gasca San Genaro 4600 Celestino Gasca Felipe
-                            Carrillo Puerto 1400 Celestino Gasca Nexxus 1500 Felipe Carrillo
-                                Puerto Infonavit Monterreal 2000 Felipe Carrillo Puerto Tacos
-                                    Chava 3100 Felipe Carrillo Puerto San Genaro 4700 Felipe
-                                        Carrillo Puerto Celestino Gasca 1400 Felipe Carrillo
-                                            Puerto Nexxus 2800 Tacos Chava La Loma 2000 Tacos
-                                                Chava Privadas El Sauce 4100 Tacos Chava Ricardo
-                                                    Flores Magon 3400 Tacos Chava Infonavit
-                                                        Monterreal 1800 Tacos Chava Felipe
-                                                            Carrillo Puerto 3100 Tacos Chava
-                                                                Nexxus 3100 Nexxus Celestino
-                                                                    Gasca 1500 Nexxus
-                                                                        Felipe Carrillo
-                                                                            Puerto 2800 Nexxus
-                                                                                Tacos
-                                                                                    Chava 3100
+Nexxus	Tacos Chava	3100
+Nexxus	Felipe Carrillo Puerto	2800
+Nexxus	Celestino Gasca	1500
+Celestino Gasca	Nexxus	1500
+Celestino Gasca	Felipe Carrillo Puerto	1400
+Celestino Gasca	San Genaro	4600
+San Genaro	Felipe Carrillo Puerto	4700
+San Genaro	Celestino Gasca	4600
+Sector Jardines	Ricardo Flores Magon	1600
+Felipe Carrillo Puerto	Nexxus	2800
+Felipe Carrillo Puerto	Tacos Chava	3100
+Felipe Carrillo Puerto	Celestino Gasca	1400
+Felipe Carrillo Puerto	San Genaro	4700
+Felipe Carrillo Puerto	Infonavit Monterreal	2000
+Infonavit Monterreal	Felipe Carrillo Puerto	2000
+Infonavit Monterreal	Tacos Chava	1800
+Infonavit Monterreal	Ricardo Flores Magon	1600
+Ricardo Flores Magon	Sector Jardines	1600
+Ricardo Flores Magon	Tacos Chava	3400
+Ricardo Flores Magon	Infonavit Monterreal	1600
+Ricardo Flores Magon	Privadas El Sauce	4400
+Privadas El Sauce	Ricardo Flores Magon	4400
+Privadas El Sauce	Tacos Chava	4100
+Tacos Chava	Nexxus	3100
+Tacos Chava	Felipe Carrillo Puerto	3100
+Tacos Chava	Ricardo Flores Magon	3400
+Tacos Chava	Infonavit Monterreal	1800
+Tacos Chava	Privadas El Sauce	4100
+Tacos Chava	La Loma	2000
+La Loma	Tacos Chava	2000

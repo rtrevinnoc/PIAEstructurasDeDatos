@@ -1,0 +1,36 @@
+Camino [->(Tacos Chava)->(La Loma)]: -> 2000 m 
+	a) Consumo de gasolina estimado: 0.053 L
+	b) Tiempo de llegada estimado: 2.0 min
+
+Camino [->(Tacos Chava)->(Privadas El Sauce)]: -> 4100 m 
+	a) Consumo de gasolina estimado: 0.108 L
+	b) Tiempo de llegada estimado: 4.1 min
+
+Camino [->(Tacos Chava)->(Ricardo Flores Magon)]: -> 3400 m 
+	a) Consumo de gasolina estimado: 0.089 L
+	b) Tiempo de llegada estimado: 3.4 min
+
+Camino [->(Tacos Chava)->(Infonavit Monterreal)]: -> 1800 m 
+	a) Consumo de gasolina estimado: 0.047 L
+	b) Tiempo de llegada estimado: 1.8 min
+
+Camino [->(Tacos Chava)->(Felipe Carrillo Puerto)]: -> 3100 m 
+	a) Consumo de gasolina estimado: 0.082 L
+	b) Tiempo de llegada estimado: 3.1 min
+
+Camino [->(Tacos Chava)->(Ricardo Flores Magon)->(Sector Jardines)]: -> 5000 m 
+	a) Consumo de gasolina estimado: 0.132 L
+	b) Tiempo de llegada estimado: 5.0 min
+
+Camino [->(Tacos Chava)->(Nexxus)->(Celestino Gasca)->(San Genaro)]: -> 9200 m 
+	a) Consumo de gasolina estimado: 0.242 L
+	b) Tiempo de llegada estimado: 9.2 min
+
+Camino [->(Tacos Chava)->(Nexxus)->(Celestino Gasca)]: -> 4600 m 
+	a) Consumo de gasolina estimado: 0.121 L
+	b) Tiempo de llegada estimado: 4.6 min
+
+Camino [->(Tacos Chava)->(Nexxus)]: -> 3100 m 
+	a) Consumo de gasolina estimado: 0.082 L
+	b) Tiempo de llegada estimado: 3.1 min
+

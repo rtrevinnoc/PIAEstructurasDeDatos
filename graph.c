@@ -342,6 +342,19 @@ void imprimirCamino(int parent[], int j, char nombres[][50]) {
 	printf("->(%s)", nombres[j]); // Imprimir el nombre del vertice
 }
 
+void imprimirCaminoArchivo(FILE *file, int parent[], int j, char nombres[][50]) {
+	if (parent[j] == -1) { // Caso base, si el vertice con indice j es el comienzo
+		fprintf(file, "->(%s)", nombres[j]); // Imprimir el nombre del vertice
+		return;                       // terminar la funcion
+	}
+
+	imprimirCaminoArchivo(file,
+			parent, parent[j],
+			nombres); // Llamada recursiva con el vertice que antecede al acutal
+
+	fprintf(file, "->(%s)", nombres[j]); // Imprimir el nombre del vertice
+}
+
 float consumoGasolinaItalicaFT125(float distancia) { return distancia / 38000; }
 
 float tiempoEstimadoItalicaFT125(float distancia) { return distancia / 1000; }
@@ -407,11 +420,23 @@ void dijkstraAlg(tVertex *currVertex, char *pivot, int *numVertices, int unico,
 		numEdge++; // Siguiente pasada
 	}
 
+	FILE *file;
+	if (!unico) {
+		file = fopen("caminos.txt", "w"); // Abrir archivo
+
+		if (!file) {
+			printf(
+					"# ERROR: No pudo crearse reporte de caminos."); // Imprimir error si no
+			// existe el archivo
+			exit(1);
+		}
+	}
+
 	printf("\n** Caminos más cortos **\n\n");
 	for (int i = 0; i < *numVertices; i++) { // Por cada vertice
 		if ((unico && strcmp(nombres[i], nombre) == 0) || (!unico)) {
-			if (strcmp(nombres[i], "Tacos Chava") == 0)
-				continue;
+			if (strcmp(nombres[i], "Tacos Chava") == 0) continue;
+
 			printf("Camino [");
 			imprimirCamino(caminos, i, nombres); // Imprimir camino más corto
 			printf("]: -> %d m \n\ta) Consumo de gasolina estimado: %0.3f L\n\tb) "
@@ -419,9 +444,29 @@ void dijkstraAlg(tVertex *currVertex, char *pivot, int *numVertices, int unico,
 					distances[i], consumoGasolinaItalicaFT125(distances[i]),
 					tiempoEstimadoItalicaFT125(
 						distances[i])); // Imprimir distancia del camino
+
+			if (!unico) {
+				fprintf(file, "Camino [");
+				imprimirCaminoArchivo(file, caminos, i, nombres); // Imprimir camino más corto
+				fprintf(file, "]: -> %d m \n\ta) Consumo de gasolina estimado: %0.3f L\n\tb) "
+						"Tiempo de llegada estimado: %0.1f min\n\n",
+						distances[i], consumoGasolinaItalicaFT125(distances[i]),
+						tiempoEstimadoItalicaFT125(
+							distances[i])); // Imprimir distancia del camino
+			}
 		}
 	}
 	printf("\n");
+
+	if (!unico) {
+		if (fclose(file)) { // Cerrrar el archivo
+			printf(
+					"# ERROR: No puedo cerrarse el reporte de caminos."); // Imprimir error,
+			// si no se pudo
+			// cerrar
+			exit(1);
+		}
+	}
 }
 
 // Leer un numero de entrada estandar y guardarlo en la variable del puntero
@@ -553,45 +598,6 @@ int main(void) {
 	int firstGraphVertices = 0;
 
 	cargarGrafo("mapa.txt", &firstVertex, &firstGraphVertices);
-
-	// ############# PIA #############
-	/*addVertex(&firstVertex, "Tacos Chava", &firstGraphVertices);*/
-	/*addVertex(&firstVertex, "Felipe Carrillo Puerto", &firstGraphVertices);*/
-	/*addVertex(&firstVertex, "Nexxus", &firstGraphVertices);*/
-	/*addVertex(&firstVertex, "San Genaro", &firstGraphVertices);*/
-	/*addVertex(&firstVertex, "Celestino Gasca", &firstGraphVertices);*/
-	/*addVertex(&firstVertex, "Ricardo Flores Magon", &firstGraphVertices);*/
-	/*addVertex(&firstVertex, "Sector Jardines", &firstGraphVertices);*/
-	/*addVertex(&firstVertex, "Infonavit Monterreal", &firstGraphVertices);*/
-	/*addVertex(&firstVertex, "Privadas El Sauce", &firstGraphVertices);*/
-	/*addVertex(&firstVertex, "La Loma", &firstGraphVertices);*/
-
-	/*addEdge(firstVertex, "Tacos Chava", "Infonavit Monterreal", 1800, 0);*/
-	/*addEdge(firstVertex, "Tacos Chava", "Nexxus", 3100, 0);*/
-	/*addEdge(firstVertex, "Tacos Chava", "Ricardo Flores Magon", 3400, 0);*/
-	/*addEdge(firstVertex, "Tacos Chava", "Privadas El Sauce", 4100, 0);*/
-	/*addEdge(firstVertex, "Tacos Chava", "Felipe Carrillo Puerto", 3100, 0);*/
-	/*addEdge(firstVertex, "Tacos Chava", "La Loma", 2000, 0);*/
-
-	/*addEdge(firstVertex, "Ricardo Flores Magon", "Infonavit Monterreal", 1600,
-	 * 0);*/
-	/*addEdge(firstVertex, "Ricardo Flores Magon", "Sector Jardines", 1600, 0);*/
-
-	/*addEdge(firstVertex, "Felipe Carrillo Puerto", "Celestino Gasca", 1400,
-	 * 0);*/
-	/*addEdge(firstVertex, "Felipe Carrillo Puerto", "Nexxus", 2800, 0);*/
-	/*addEdge(firstVertex, "Felipe Carrillo Puerto", "San Genaro", 4700, 0);*/
-
-	/*addEdge(firstVertex, "Privadas El Sauce", "Ricardo Flores Magon", 4400,
-	 * 0);*/
-
-	/*addEdge(firstVertex, "Infonavit Monterreal", "Felipe Carrillo Puerto", 2000,
-	 * 0);*/
-
-	/*addEdge(firstVertex, "Nexxus", "Celestino Gasca", 1500, 0);*/
-
-	/*addEdge(firstVertex, "Celestino Gasca", "San Genaro", 4600, 0);*/
-	// ##################################################
 
 	int op, peso;
 	char nombre[50], nombre_b[50];
